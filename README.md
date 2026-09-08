@@ -47,7 +47,7 @@ aikido-pontivy/
 Ouvrez le fichier `index.html` et mettez à jour les constantes JavaScript situées au début du script d'administration :
 
 ```javascript
-const GITHUB_OWNER = "VOTRE_NOM_UTILISATEUR_OU_ORGANISATION"; 
+const GITHUB_OWNER = "Elite3"; 
 const GITHUB_REPO  = "aikido-pontivy";
 const FILE_PATH    = "content/club.json";
 ```

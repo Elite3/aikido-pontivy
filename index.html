@@ -370,15 +370,28 @@
         <div class="bg-neutral-950 border border-neutral-800 p-6 rounded-2xl max-w-sm w-full space-y-4 text-xs shadow-2xl">
             <div class="flex justify-between items-center">
                 <h3 class="text-sm font-semibold text-white flex items-center gap-2">
-                    <span>⚙️ Connexion Éditeur</span>
+                    <span>⚙️ Connexion & Configuration GitHub</span>
                 </h3>
                 <button onclick="toggleAdminModal()" class="text-neutral-400 hover:text-white text-lg">&times;</button>
             </div>
             <p class="text-neutral-400 leading-relaxed">
-                Saisissez le jeton d'accès GitHub (Token PAT) pour publier directement en ligne, ou accédez à l'édition visuelle avec l'option de téléchargement local.
+                Renseignez vos identifiants GitHub pour publier directement les modifications en ligne.
             </p>
-            <input type="password" id="admin-token-input" placeholder="ghp_xxxxxxxxxxxx"
-                class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-sky-500">
+            <div>
+                <label class="block text-neutral-300 font-medium mb-1">Nom d'utilisateur / Orga GitHub *</label>
+                <input type="text" id="admin-owner-input" placeholder="Elite3" value="Elite3"
+                    class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-sky-500">
+            </div>
+            <div>
+                <label class="block text-neutral-300 font-medium mb-1">Nom du Dépôt GitHub *</label>
+                <input type="text" id="admin-repo-input" placeholder="aikido-pontivy" value="aikido-pontivy"
+                    class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-sky-500">
+            </div>
+            <div>
+                <label class="block text-neutral-300 font-medium mb-1">Jeton d'accès GitHub (Token PAT) *</label>
+                <input type="password" id="admin-token-input" placeholder="ghp_xxxxxxxxxxxx ou github_pat_..."
+                    class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-sky-500">
+            </div>
             <div class="flex justify-end gap-2 pt-2">
                 <button onclick="toggleAdminModal()"
                     class="px-3 py-1.5 text-neutral-400 hover:text-white">Annuler</button>
@@ -390,8 +403,8 @@
 
     <!-- SCRIPT DE LOGIQUE APPLICATIVE -->
     <script>
-        // Configuration GitHub Repo
-        const GITHUB_OWNER = "admin";
+        // Configuration par défaut GitHub Repo (modifiable dans la modale)
+        const GITHUB_OWNER = "Elite3";
         const GITHUB_REPO = "aikido-pontivy";
         const FILE_PATH = "content/club.json";
 
@@ -571,14 +584,24 @@
 
         // 3. Mode Administrateur In-Context
         function toggleAdminModal() {
-            document.getElementById('admin-modal').classList.toggle('hidden');
+            const modal = document.getElementById('admin-modal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                document.getElementById('admin-owner-input').value = localStorage.getItem('aikido_github_owner') || 'Elite3';
+                document.getElementById('admin-repo-input').value = localStorage.getItem('aikido_github_repo') || 'aikido-pontivy';
+                document.getElementById('admin-token-input').value = localStorage.getItem('aikido_admin_token') || '';
+            }
         }
 
         function validerConnexionAdmin() {
+            const owner = document.getElementById('admin-owner-input').value.trim();
+            const repo = document.getElementById('admin-repo-input').value.trim() || 'aikido-pontivy';
             const token = document.getElementById('admin-token-input').value.trim();
-            if (token) {
-                localStorage.setItem('aikido_admin_token', token);
-            }
+
+            if (owner) localStorage.setItem('aikido_github_owner', owner);
+            if (repo) localStorage.setItem('aikido_github_repo', repo);
+            if (token) localStorage.setItem('aikido_admin_token', token);
+
             toggleAdminModal();
             activerModeAdmin();
         }
@@ -734,11 +757,18 @@
 
         // Publication sur GitHub REST API
         async function sauvegarderDirectement() {
+            const owner = localStorage.getItem('aikido_github_owner') || GITHUB_OWNER;
+            const repo = localStorage.getItem('aikido_github_repo') || GITHUB_REPO;
             const token = localStorage.getItem('aikido_admin_token');
             const btn = document.getElementById('btn-save');
 
+            if (!owner || owner === "mon-pseudo-github" || owner === "VOTRE_PSEUDO_OU_CLUB") {
+                alert("❌ Paramètre manquant :\n\nVeuillez cliquer sur ⚙️ Espace Administration (en bas de page) et renseigner votre Nom d'utilisateur GitHub.");
+                return toggleAdminModal();
+            }
+
             if (!token) {
-                alert("Aucun jeton GitHub renseigné. Utilisez l'option 'Télécharger JSON' ou saisissez un jeton via ⚙️ Espace Administration.");
+                alert("❌ Jeton GitHub manquant :\n\nVeuillez saisir votre jeton GitHub (PAT) dans la modale d'administration, ou utilisez l'option 'Télécharger JSON'.");
                 return toggleAdminModal();
             }
 
@@ -748,16 +778,29 @@
             btn.textContent = "⏳ Publication...";
 
             try {
-                const getFile = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${FILE_PATH}`, {
+                const getFile = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${FILE_PATH}`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
+
+                if (!getFile.ok) {
+                    if (getFile.status === 404) {
+                        alert(`❌ Erreur GitHub (404 Not Found) :\n\nLe dépôt "${owner}/${repo}" n'a pas été trouvé sur GitHub.\n\nVérifiez dans ⚙️ Espace Administration :\n1. Votre Nom d'utilisateur GitHub (${owner})\n2. Le Nom du Dépôt (${repo})\n3. Que le jeton PAT a bien la permission "Contents: Read and write".`);
+                    } else if (getFile.status === 401) {
+                        alert(`❌ Jeton invalide (401 Unauthorized) :\n\nVotre jeton d'accès GitHub est incorrect ou expiré. Veuillez le ressaisir via ⚙️ Espace Administration.`);
+                    } else {
+                        const err = await getFile.json();
+                        alert("Erreur GitHub (" + getFile.status + ") : " + (err.message || "Accès refusé"));
+                    }
+                    return;
+                }
+
                 const fileData = await getFile.json();
                 const currentSha = fileData.sha;
 
                 const jsonContent = JSON.stringify(clubData, null, 2);
                 const encodedContent = btoa(unescape(encodeURIComponent(jsonContent)));
 
-                const updateRes = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${FILE_PATH}`, {
+                const updateRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${FILE_PATH}`, {
                     method: 'PUT',
                     headers: {
                         'Authorization': `Bearer ${token}`,
@@ -771,7 +814,7 @@
                 });
 
                 if (updateRes.ok) {
-                    alert("✅ Modifications enregistrées et publiées avec succès ! Le site sera actualisé sous 30 secondes.");
+                    alert("✅ Modifications enregistrées et publiées avec succès sur GitHub ! Le site sera actualisé sous 30 secondes.");
                 } else {
                     const err = await updateRes.json();
                     alert("Erreur lors de la publication GitHub : " + (err.message || "Vérifiez vos droits sur le dépôt"));
