@@ -1,0 +1,74 @@
+{
+    "slogan": "Enseignement A.I.A.T.J. - Association Internationale d'Aïkido Traditionnel du Japon",
+    "enseignant_titre": "Assuré par Philippe Boivin",
+    "enseignant_grade": "6ᵉ Dan de l'Aïkikaï de Tokyo — Élève de Gérard Blaize (7ᵉ Dan Aïkikaï de Tokyo)",
+    "alerte": "Reprise des cours au dojo de Kérantré. Deux cours d'essai gratuits avec un simple pantalon de survêtement !",
+    "affiche_stage": "",
+    "horaires": [
+        {
+            "categorie": "Cours Adultes & Adolescents",
+            "jours_heures": "Lundi & Jeudi : 19h00 - 20h30",
+            "lieu": "Gymnase de Kérantré, Pontivy"
+        },
+        {
+            "categorie": "Pratique des Armes traditionnelles (Bokken, Jo, Tanto)",
+            "jours_heures": "Samedi matin : 10h00 - 11h30",
+            "lieu": "Gymnase de Kérantré, Pontivy"
+        }
+    ],
+    "tarifs": [
+        {
+            "formule": "Cotisation & Licence Annuelle",
+            "prix": "130 €",
+            "details": "Comprend la licence fédérale, l'assurance et l'accès à tous les entraînements de la saison."
+        },
+        {
+            "formule": "Tarif Réduit (Étudiants / Demandeurs d'emploi)",
+            "prix": "95 €",
+            "details": "Sur présentation d'un justificatif en début d'année."
+        }
+    ],
+    "contact": {
+        "dojo_nom": "Gymnase de Kérantré",
+        "adresse": "Rue Jef Le Penven, 56300 Pontivy",
+        "coordonnees_gps": "48.0593, -2.95464"
+    },
+    "bureau": [
+        {
+            "role": "Président",
+            "nom": "Benoit HEURTEBIS",
+            "telephone": "06 23 82 91 91",
+            "email": "benoit.heurtebis@wanadoo.fr"
+        },
+        {
+            "role": "Secrétaire",
+            "nom": "Philippe BOIVIN",
+            "telephone": "02 97 27 74 59",
+            "email": "boivinp@wanadoo.fr"
+        },
+        {
+            "role": "Trésorier",
+            "nom": "Jaccky GUILLEMOTO",
+            "telephone": "02 97 25 55 92",
+            "email": "jacky.guillemoto@orange.fr"
+        }
+    ],
+    "partenaires": [
+        {
+            "nom": "A.I.A.T.J.",
+            "url": "http://www.afatj.com"
+        },
+        {
+            "nom": "Poterie de Lézerhy",
+            "url": "http://pagesperso-orange.fr/poterie-de-lezerhy"
+        },
+        {
+            "nom": "Aïkido Mouilleron (David Richard)",
+            "url": "http://aikido.mouilleron.free.fr"
+        },
+        {
+            "nom": "Aïkido Saint-Joseph La Réunion",
+            "url": "http://aikido-saint-joseph-97480.asso-web.com"
+        }
+    ]
+}
