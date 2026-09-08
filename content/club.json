@@ -33,11 +33,11 @@
   "horaires": [
     {
       "categorie": "Cours Adultes & Adolescents",
-      "jours_heures": "Lundi & Jeudi : 19h00 - 20h30",
+      "jours_heures": "Lundi et Vendredi : 19h00 - 21h00",
       "lieu": "Gymnase de Kérantré, Pontivy"
     },
     {
-      "categorie": "Pratique des Armes traditionnelles (Bokken, Jo, Tanto)",
+      "categorie": "Pratique des Armes traditionnelles",
       "jours_heures": "Samedi matin : 10h00 - 11h30",
       "lieu": "Gymnase de Kérantré, Pontivy"
     }
