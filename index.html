@@ -225,11 +225,16 @@
                 <h2 class="font-serif-martial text-3xl font-bold text-white">Prochain Stage d'Aïkido</h2>
             </div>
             
-            <!-- Admin input field for poster URL -->
-            <div id="admin-stage-url-box" class="hidden mb-4 max-w-md mx-auto p-3 bg-sky-950/60 border border-sky-600/60 rounded-lg text-xs text-left">
-                <label class="block text-sky-300 font-semibold mb-1">🖼️ URL de l'Affiche du Stage :</label>
-                <div data-editable="affiche_stage" class="bg-neutral-900 p-2 rounded text-sky-200 break-all border border-neutral-700"></div>
-                <p class="text-[10px] text-neutral-400 mt-1">Saisissez l'URL de l'image (ex: /images/uploads/stage.jpg ou https://...)</p>
+            <!-- Admin input field for poster URL & device file upload -->
+            <div id="admin-stage-url-box" class="hidden mb-4 max-w-md mx-auto p-4 bg-sky-950/60 border border-sky-600/60 rounded-xl text-xs text-left shadow-xl space-y-2">
+                <label class="block text-sky-300 font-semibold">🖼️ Affiche du Stage :</label>
+                <button onclick="ouvrirFilePicker({type: 'stage'})" type="button" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-semibold py-2 rounded-lg text-xs transition flex items-center justify-center gap-1.5 shadow">
+                    <span>📷 Importer l'affiche depuis mon appareil (PC / Mobile)</span>
+                </button>
+                <div class="pt-1">
+                    <span class="text-[10px] text-neutral-400 block mb-0.5">Ou URL / Chemin d'accès direct :</span>
+                    <div data-editable="affiche_stage" class="bg-neutral-900 p-2 rounded-lg text-sky-200 break-all border border-neutral-700 font-mono text-[11px]"></div>
+                </div>
             </div>
 
             <div id="stage-image-container" class="hidden rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950 p-3 inline-block shadow-2xl">
@@ -244,10 +249,10 @@
                 <h2 class="font-serif-martial text-3xl font-bold text-white" data-editable="galerie_titre">Galerie Photo & Événements</h2>
                 <p class="text-neutral-400 text-xs sm:text-sm" data-editable="galerie_soustitre">Retrouvez en images la pratique au Dojo de Kérantré, les entraînements et les stages d'Aïkido.</p>
                 
-                <!-- Bouton Ajouter une photo (Mode Admin uniquement) -->
+                <!-- Bouton Importer une photo (Mode Admin uniquement) -->
                 <div id="admin-add-photo-box" class="hidden pt-4">
-                    <button onclick="ajouterPhotoGalerie()" type="button" class="bg-sky-600 hover:bg-sky-500 text-white font-semibold px-4 py-2 rounded-lg text-xs transition inline-flex items-center gap-1.5 shadow-lg">
-                        <span>➕ Ajouter une photo à la galerie</span>
+                    <button onclick="ouvrirFilePicker({type: 'galerie_add'})" type="button" class="bg-sky-600 hover:bg-sky-500 text-white font-semibold px-5 py-2.5 rounded-xl text-xs transition inline-flex items-center gap-2 shadow-xl">
+                        <span>📷 Importer une photo depuis mon appareil (PC / Mobile / Appareil Photo)</span>
                     </button>
                 </div>
             </div>
@@ -256,6 +261,9 @@
                 <!-- Rempli dynamiquement depuis club.json -->
             </div>
         </section>
+
+        <!-- Input Masqué pour la Sélection de Fichiers Photos -->
+        <input type="file" id="image-file-picker" accept="image/*" class="hidden">
 
         <!-- Tarifs -->
         <section id="tarifs" class="py-20 px-4 max-w-4xl mx-auto border-b border-neutral-800/80">
@@ -559,7 +567,7 @@
                         const isAdmin = document.body.classList.contains('admin-mode');
                         gContainer.innerHTML += `
                         <div class="group bg-neutral-950 rounded-xl border border-neutral-800/90 overflow-hidden shadow-lg flex flex-col justify-between hover:border-red-900/60 transition">
-                            <div class="relative overflow-hidden cursor-pointer aspect-video sm:aspect-square bg-neutral-900" onclick="ouvrirLightbox('${g.url}', '${g.legende.replace(/'/g, "\\'")}')">
+                            <div class="relative overflow-hidden cursor-pointer aspect-video sm:aspect-square bg-neutral-900" onclick="ouvrirLightbox('${g.url.replace(/'/g, "\\'")}', '${g.legende.replace(/'/g, "\\'")}')">
                                 <img src="${g.url}" alt="${g.legende}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
                                     <span class="text-white text-xs font-medium flex items-center gap-1">🔍 Agrandir</span>
@@ -567,9 +575,14 @@
                             </div>
                             <div class="p-4 space-y-2">
                                 ${isAdmin ? `
-                                <div class="space-y-1 bg-sky-950/40 border border-sky-800/50 p-2 rounded text-[11px]">
-                                    <label class="text-sky-300 font-semibold block">URL de l'image :</label>
-                                    <div data-editable="galerie_url_${index}" class="bg-neutral-900 p-1.5 rounded text-sky-200 break-all border border-neutral-700 font-mono">${g.url}</div>
+                                <div class="space-y-2 bg-sky-950/40 border border-sky-800/50 p-2.5 rounded-lg text-[11px]">
+                                    <button onclick="ouvrirFilePicker({type: 'galerie_replace', index: ${index}})" type="button" class="w-full bg-sky-700 hover:bg-sky-600 text-white font-semibold py-1 rounded transition flex items-center justify-center gap-1">
+                                        <span>📷 Changer la photo (PC / Mobile)</span>
+                                    </button>
+                                    <div>
+                                        <label class="text-sky-300 font-semibold block mb-0.5">URL / Données image :</label>
+                                        <div data-editable="galerie_url_${index}" class="bg-neutral-900 p-1.5 rounded text-sky-200 break-all border border-neutral-700 font-mono text-[10px] max-h-16 overflow-y-auto">${g.url}</div>
+                                    </div>
                                 </div>
                                 ` : ''}
                                 <p class="text-neutral-300 text-xs font-medium leading-snug" data-editable="galerie_legende_${index}">${g.legende}</p>
@@ -652,18 +665,82 @@
             setEditContent('footer_line2', data.footer_line2);
         }
 
-        // Functions Galerie & Lightbox
-        function ajouterPhotoGalerie() {
-            if (!clubData.galerie) clubData.galerie = [];
-            capturerModifications();
-            clubData.galerie.push({
-                url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80",
-                legende: "Nouvelle photo du club — Cliquez pour éditer la légende"
-            });
-            rendreContenu(clubData);
-            if (document.body.classList.contains('admin-mode')) {
-                activerModeAdmin();
+        // Functions Galerie, Upload & Lightbox
+        let filePickerTarget = null;
+
+        function ouvrirFilePicker(target) {
+            filePickerTarget = target;
+            const input = document.getElementById('image-file-picker');
+            if (input) {
+                input.value = '';
+                input.click();
             }
+        }
+
+        document.getElementById('image-file-picker')?.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            compresserImage(file, function(dataUrl) {
+                if (!filePickerTarget) return;
+
+                if (filePickerTarget.type === 'galerie_add') {
+                    if (!clubData.galerie) clubData.galerie = [];
+                    capturerModifications();
+                    const defaultLegende = prompt("Légende de la nouvelle photo (optionnel) :", "Photo du club — " + file.name.split('.')[0]) || "Photo du club";
+                    clubData.galerie.push({
+                        url: dataUrl,
+                        legende: defaultLegende
+                    });
+                    rendreContenu(clubData);
+                    if (document.body.classList.contains('admin-mode')) activerModeAdmin();
+                } else if (filePickerTarget.type === 'galerie_replace') {
+                    capturerModifications();
+                    if (clubData.galerie && clubData.galerie[filePickerTarget.index]) {
+                        clubData.galerie[filePickerTarget.index].url = dataUrl;
+                        rendreContenu(clubData);
+                        if (document.body.classList.contains('admin-mode')) activerModeAdmin();
+                    }
+                } else if (filePickerTarget.type === 'stage') {
+                    capturerModifications();
+                    clubData.affiche_stage = dataUrl;
+                    rendreContenu(clubData);
+                    if (document.body.classList.contains('admin-mode')) activerModeAdmin();
+                }
+            });
+        });
+
+        function compresserImage(file, callback) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    let width = img.width;
+                    let height = img.height;
+                    const maxDim = 1200;
+
+                    if (width > maxDim || height > maxDim) {
+                        if (width > height) {
+                            height = Math.round((height * maxDim) / width);
+                            width = maxDim;
+                        } else {
+                            width = Math.round((width * maxDim) / height);
+                            height = maxDim;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.85);
+                    callback(compressedDataUrl);
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
         }
 
         function supprimerPhotoGalerie(index) {

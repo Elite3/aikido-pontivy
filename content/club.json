@@ -1,20 +1,4 @@
 {
-<<<<<<< HEAD
-  "slogan": "L'harmonie en mouvement",
-  "hero_badge": "AFFILIÉ A.I.A.T.J. — AÏKIKAÏ DE TOKYO",
-  "hero_description": "Découvrez un art martial japonais traditionnel d'esquive, de défense et de maîtrise de soi sans compétition. Accessible à tous, hommes et femmes, dès 14 ans.",
-  "hero_btn1": "CONSULTER LES CRÉNEAUX",
-  "hero_btn2": "VENIR ESSAYER EN JOGGING",
-  "alerte": "Reprise des cours au dojo de Kérantré. Deux cours d'essai gratuits avec un simple pantalon de survêtement !",
-  "affiche_stage": "",
-  "valeurs_tag": "ESPRIT DU BUDO",
-  "valeurs_titre": "Les Principes de la Pratique",
-  "valeurs_soustitre": "Une voie d'épanouissement physique et mental fondée sur le respect du partenaire.",
-  "valeurs_cards": [
-    {
-      "titre": "Zéro compétition",
-      "description": "Pas de vainqueur ni de vaincu. L'accent est mis sur la coopération, la recherche du geste juste et l'apprentissage mutuel sans agressivité."
-=======
     "slogan": "L'harmonie en mouvement",
     "hero_badge": "Affilié A.I.A.T.J. — Aïkikaï de Tokyo",
     "hero_description": "Découvrez un art martial japonais traditionnel d'esquive, de défense et de maîtrise de soi sans compétition. Accessible à tous, hommes et femmes, dès 14 ans.",
@@ -132,103 +116,30 @@
         "dojo_nom": "Gymnase de Kérantré",
         "adresse": "Rue Jef Le Penven, 56300 Pontivy",
         "coordonnees_gps": "48.0593, -2.95464"
->>>>>>> f3cc63b (ajout:add photo)
     },
-    {
-      "titre": "Mains nues & Armes",
-      "description": "Travail de défense (projections, clés articulaires) enrichi par l'étude des armes traditionnelles en bois."
-    },
-    {
-      "titre": "Accessible à tous",
-      "description": "L'Aïkido n'utilise pas la force brute mais l'énergie et le placement. La pratique convient parfaitement aux femmes et aux hommes de tous âges."
-    }
-  ],
-  "enseignant_badge": "DIRECTION TECHNIQUE",
-  "enseignant_titre": "Assuré par Philippe Boivin",
-  "enseignant_grade": "6ᵉ Dan de l'Aïkikaï de Tokyo — Élève direct de Gérard Blaize (7ᵉ Dan Aïkikaï de Tokyo)",
-  "enseignant_bio": "Un enseignement rigoureux et authentique transmis dans le respect des principes fondamentaux fondés par Maître Morihei Ueshiba et diffusés par l'Association Internationale d'Aïkido Traditionnel du Japon (A.I.A.T.J.).",
-  "horaires_tag": "PLANNING",
-  "horaires_titre": "Horaires des Cours",
-  "horaires_soustitre": "Les séances se déroulent dans le Dojo du complexe sportif de Kérantré.",
-  "horaires": [
-    {
-      "categorie": "Cours Adultes & Adolescents",
-      "jours_heures": "Lundi et Vendredi : 19h00 - 21h00",
-      "lieu": "Gymnase de Kérantré, Pontivy"
-    },
-    {
-      "categorie": "XXXXXXXXXXXXXXXXXXXX",
-      "jours_heures": "XXXX : XXXX",
-      "lieu": "XXXXX   XXXXX XXXXX XXXXX"
-    }
-  ],
-  "tarifs_tag": "ADHÉSION",
-  "tarifs_titre": "Cotisations & Tarifs",
-  "tarifs_soustitre": "Tarifs annuels tout compris pour la saison sportive.",
-  "tarifs": [
-    {
-      "formule": "Cotisation & Licence Annuelle",
-      "prix": "180 €",
-      "details": "Comprend la licence fédérale, l'assurance et l'accès à tous les entraînements de la saison."
-    },
-    {
-      "formule": "Tarif Réduit (Étudiants / Demandeurs d'emploi)",
-      "prix": "150 €",
-      "details": "Sur présentation d'un justificatif en début d'année."
-    }
-  ],
-  "bureau_tag": "ORGANISATION",
-  "bureau_titre": "Le Bureau de l'Association",
-  "bureau_soustitre": "Membres bénévoles et responsables administratifs du club.",
-  "bureau": [
-    {
-      "role": "PRÉSIDENT",
-      "nom": "Benoit HEURTEBIS",
-      "telephone": "06 23 82 91 91",
-      "email": "benoit.heurtebis@wanadoo.fr"
-    },
-    {
-      "role": "SECRÉTAIRE",
-      "nom": "Philippe BOIVIN",
-      "telephone": "02 97 27 74 59",
-      "email": "boivinp@wanadoo.fr"
-    },
-    {
-      "role": "TRÉSORIER",
-      "nom": "Jaccky GUILLEMOTO",
-      "telephone": "02 97 25 55 92",
-      "email": "jacky.guillemoto@orange.fr"
-    }
-  ],
-  "contact_tag": "LOCALISATION",
-  "contact_titre": "Dojo & Plan d'Accès",
-  "contact_description": "Venez assister à un cours ou essayer gratuitement. Présentez-vous 10 minutes avant le début de la séance au dojo.",
-  "contact": {
-    "dojo_nom": "Gymnase de Kérantré",
-    "adresse": "Rue Jef Le Penven, 56300 Pontivy",
-    "coordonnees_gps": "48.0593, -2.95464"
-  },
-  "form_titre": "Envoyer un message",
-  "form_description": "Une question sur la reprise, la tenue ou les créneaux ? Écrivez-nous directement.",
-  "partenaires_tag": "LIENS & PARTENAIRES OFFICIELS",
-  "partenaires": [
-    {
-      "nom": "A.I.A.T.J.",
-      "url": "http://www.afatj.com"
-    },
-    {
-      "nom": "Poterie de Lézerhy",
-      "url": "http://pagesperso-orange.fr/poterie-de-lezerhy"
-    },
-    {
-      "nom": "Aïkido Mouilleron (David Richard)",
-      "url": "http://aikido.mouilleron.free.fr"
-    },
-    {
-      "nom": "Aïkido Saint-Joseph La Réunion",
-      "url": "http://aikido-saint-joseph-97480.asso-web.com"
-    }
-  ],
-  "footer_line1": "Pontivy Aïkido — Association Loi 1901 — Dojo de Kérantré, 56300 Pontivy",
-  "footer_line2": "Affilié à l'Association Internationale d'Aïkido Traditionnel du Japon (A.I.A.T.J.)"
+    "form_titre": "Envoyer un message",
+    "form_description": "Une question sur la reprise, la tenue ou les créneaux ? Écrivez-nous directement.",
+
+    "partenaires_tag": "Liens & Partenaires Officiels",
+    "partenaires": [
+        {
+            "nom": "A.I.A.T.J.",
+            "url": "http://www.afatj.com"
+        },
+        {
+            "nom": "Poterie de Lézerhy",
+            "url": "http://pagesperso-orange.fr/poterie-de-lezerhy"
+        },
+        {
+            "nom": "Aïkido Mouilleron (David Richard)",
+            "url": "http://aikido.mouilleron.free.fr"
+        },
+        {
+            "nom": "Aïkido Saint-Joseph La Réunion",
+            "url": "http://aikido-saint-joseph-97480.asso-web.com"
+        }
+    ],
+
+    "footer_line1": "Pontivy Aïkido — Association Loi 1901 — Dojo de Kérantré, 56300 Pontivy",
+    "footer_line2": "Affilié à l'Association Internationale d'Aïkido Traditionnel du Japon (A.I.A.T.J.)"
 }
