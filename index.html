@@ -121,6 +121,7 @@
                     <a href="#discipline" class="hover:text-white transition py-1 border-b-2 border-transparent hover:border-red-600">La Discipline</a>
                     <a href="#enseignant" class="hover:text-white transition py-1 border-b-2 border-transparent hover:border-red-600">Enseignement</a>
                     <a href="#horaires" class="hover:text-white transition py-1 border-b-2 border-transparent hover:border-red-600">Horaires</a>
+                    <a href="#galerie" class="hover:text-white transition py-1 border-b-2 border-transparent hover:border-red-600">Galerie Photos</a>
                     <a href="#tarifs" class="hover:text-white transition py-1 border-b-2 border-transparent hover:border-red-600">Tarifs</a>
                     <a href="#bureau" class="hover:text-white transition py-1 border-b-2 border-transparent hover:border-red-600">Le Bureau</a>
                     <a href="#contact" class="hover:text-white transition py-1 border-b-2 border-transparent hover:border-red-600">Dojo & Contact</a>
@@ -233,6 +234,26 @@
 
             <div id="stage-image-container" class="hidden rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950 p-3 inline-block shadow-2xl">
                 <img id="stage-image" src="" alt="Affiche du stage d'Aïkido" class="max-h-[550px] w-auto rounded-lg mx-auto object-contain">
+            </div>
+        </section>
+
+        <!-- Section Galerie Photo & Événements -->
+        <section id="galerie" class="py-20 px-4 max-w-6xl mx-auto border-b border-neutral-800/80">
+            <div class="text-center mb-12 space-y-2 max-w-2xl mx-auto">
+                <span class="text-xs uppercase tracking-widest text-red-500 font-bold" data-editable="galerie_tag">Vie du Club</span>
+                <h2 class="font-serif-martial text-3xl font-bold text-white" data-editable="galerie_titre">Galerie Photo & Événements</h2>
+                <p class="text-neutral-400 text-xs sm:text-sm" data-editable="galerie_soustitre">Retrouvez en images la pratique au Dojo de Kérantré, les entraînements et les stages d'Aïkido.</p>
+                
+                <!-- Bouton Ajouter une photo (Mode Admin uniquement) -->
+                <div id="admin-add-photo-box" class="hidden pt-4">
+                    <button onclick="ajouterPhotoGalerie()" type="button" class="bg-sky-600 hover:bg-sky-500 text-white font-semibold px-4 py-2 rounded-lg text-xs transition inline-flex items-center gap-1.5 shadow-lg">
+                        <span>➕ Ajouter une photo à la galerie</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="galerie-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Rempli dynamiquement depuis club.json -->
             </div>
         </section>
 
@@ -361,6 +382,18 @@
                 class="text-neutral-400 hover:text-white px-2 py-1 transition text-[11px]">
                 Quitter
             </button>
+        </div>
+    </div>
+
+    <!-- MODALE LIGHTBOX PHOTO PLEIN ÉCRAN -->
+    <div id="lightbox-modal" onclick="fermerLightbox()"
+        class="hidden fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 cursor-pointer">
+        <div class="max-w-4xl w-full text-center space-y-4 relative" onclick="event.stopPropagation()">
+            <button onclick="fermerLightbox()" class="absolute -top-10 right-0 text-white text-3xl font-bold hover:text-red-400 transition">&times;</button>
+            <div class="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-950 p-2 shadow-2xl inline-block">
+                <img id="lightbox-img" src="" alt="Photo galerie Aïkido" class="max-h-[75vh] w-auto mx-auto object-contain rounded-xl">
+            </div>
+            <p id="lightbox-caption" class="text-neutral-300 text-sm font-medium italic"></p>
         </div>
     </div>
 
@@ -514,6 +547,43 @@
                 }
             }
 
+            // Galerie Section
+            setEditContent('galerie_tag', data.galerie_tag);
+            setEditContent('galerie_titre', data.galerie_titre);
+            setEditContent('galerie_soustitre', data.galerie_soustitre);
+            const gContainer = document.getElementById('galerie-container');
+            if (gContainer) {
+                gContainer.innerHTML = '';
+                if (data.galerie && Array.isArray(data.galerie)) {
+                    data.galerie.forEach((g, index) => {
+                        const isAdmin = document.body.classList.contains('admin-mode');
+                        gContainer.innerHTML += `
+                        <div class="group bg-neutral-950 rounded-xl border border-neutral-800/90 overflow-hidden shadow-lg flex flex-col justify-between hover:border-red-900/60 transition">
+                            <div class="relative overflow-hidden cursor-pointer aspect-video sm:aspect-square bg-neutral-900" onclick="ouvrirLightbox('${g.url}', '${g.legende.replace(/'/g, "\\'")}')">
+                                <img src="${g.url}" alt="${g.legende}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
+                                    <span class="text-white text-xs font-medium flex items-center gap-1">🔍 Agrandir</span>
+                                </div>
+                            </div>
+                            <div class="p-4 space-y-2">
+                                ${isAdmin ? `
+                                <div class="space-y-1 bg-sky-950/40 border border-sky-800/50 p-2 rounded text-[11px]">
+                                    <label class="text-sky-300 font-semibold block">URL de l'image :</label>
+                                    <div data-editable="galerie_url_${index}" class="bg-neutral-900 p-1.5 rounded text-sky-200 break-all border border-neutral-700 font-mono">${g.url}</div>
+                                </div>
+                                ` : ''}
+                                <p class="text-neutral-300 text-xs font-medium leading-snug" data-editable="galerie_legende_${index}">${g.legende}</p>
+                                ${isAdmin ? `
+                                <button onclick="supprimerPhotoGalerie(${index})" type="button" class="w-full bg-red-950/80 hover:bg-red-900 text-red-300 py-1 rounded text-[11px] font-semibold transition mt-2">
+                                    🗑️ Supprimer cette photo
+                                </button>
+                                ` : ''}
+                            </div>
+                        </div>`;
+                    });
+                }
+            }
+
             // Tarifs Section
             setEditContent('tarifs_tag', data.tarifs_tag);
             setEditContent('tarifs_titre', data.tarifs_titre);
@@ -582,6 +652,46 @@
             setEditContent('footer_line2', data.footer_line2);
         }
 
+        // Functions Galerie & Lightbox
+        function ajouterPhotoGalerie() {
+            if (!clubData.galerie) clubData.galerie = [];
+            capturerModifications();
+            clubData.galerie.push({
+                url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80",
+                legende: "Nouvelle photo du club — Cliquez pour éditer la légende"
+            });
+            rendreContenu(clubData);
+            if (document.body.classList.contains('admin-mode')) {
+                activerModeAdmin();
+            }
+        }
+
+        function supprimerPhotoGalerie(index) {
+            if (confirm("Voulez-vous vraiment supprimer cette photo de la galerie ?")) {
+                capturerModifications();
+                clubData.galerie.splice(index, 1);
+                rendreContenu(clubData);
+                if (document.body.classList.contains('admin-mode')) {
+                    activerModeAdmin();
+                }
+            }
+        }
+
+        function ouvrirLightbox(url, legende) {
+            document.getElementById('lightbox-img').src = url;
+            document.getElementById('lightbox-caption').textContent = legende;
+            document.getElementById('lightbox-modal').classList.remove('hidden');
+        }
+
+        function fermerLightbox() {
+            document.getElementById('lightbox-modal').classList.add('hidden');
+        }
+
+        // Échappement clavier pour la modale photo
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') fermerLightbox();
+        });
+
         // 3. Mode Administrateur In-Context
         function toggleAdminModal() {
             const modal = document.getElementById('admin-modal');
@@ -619,6 +729,8 @@
             document.getElementById('banner-alert').classList.remove('hidden');
             document.getElementById('stage-section').classList.remove('hidden');
             document.getElementById('admin-stage-url-box').classList.remove('hidden');
+            const addPhotoBox = document.getElementById('admin-add-photo-box');
+            if (addPhotoBox) addPhotoBox.classList.remove('hidden');
 
             document.querySelectorAll('[data-editable]').forEach(el => {
                 el.setAttribute('contenteditable', 'true');
@@ -631,10 +743,14 @@
             document.body.classList.remove('admin-mode');
             document.getElementById('admin-bar').classList.add('hidden');
             document.getElementById('admin-stage-url-box').classList.add('hidden');
+            const addPhotoBox = document.getElementById('admin-add-photo-box');
+            if (addPhotoBox) addPhotoBox.classList.add('hidden');
+            
             document.querySelectorAll('[data-editable]').forEach(el => {
                 el.removeAttribute('contenteditable');
                 el.removeAttribute('title');
             });
+            rendreContenu(clubData);
         }
 
         // Raccourci clavier (Ctrl + Shift + E)
@@ -692,6 +808,18 @@
                     h.categorie = getVal(`horaire_cat_${i}`);
                     h.lieu = getVal(`horaire_lieu_${i}`);
                     h.jours_heures = getVal(`horaire_heures_${i}`);
+                });
+            }
+
+            // Galerie
+            clubData.galerie_tag = getVal('galerie_tag');
+            clubData.galerie_titre = getVal('galerie_titre');
+            clubData.galerie_soustitre = getVal('galerie_soustitre');
+            if (clubData.galerie) {
+                clubData.galerie.forEach((g, i) => {
+                    const urlEl = document.querySelector(`[data-editable="galerie_url_${i}"]`);
+                    if (urlEl) g.url = urlEl.innerText.trim();
+                    g.legende = getVal(`galerie_legende_${i}`);
                 });
             }
 
