@@ -1,9 +1,39 @@
 {
-    "slogan": "Enseignement A.I.A.T.J. - Association Internationale d'Aïkido Traditionnel du Japon",
-    "enseignant_titre": "Assuré par Philippe Boivin",
-    "enseignant_grade": "6ᵉ Dan de l'Aïkikaï de Tokyo — Élève de Gérard Blaize (7ᵉ Dan Aïkikaï de Tokyo)",
+    "slogan": "L'harmonie en mouvement",
+    "hero_badge": "Affilié A.I.A.T.J. — Aïkikaï de Tokyo",
+    "hero_description": "Découvrez un art martial japonais traditionnel d'esquive, de défense et de maîtrise de soi sans compétition. Accessible à tous, hommes et femmes, dès 14 ans.",
+    "hero_btn1": "Consulter les créneaux",
+    "hero_btn2": "Venir essayer en jogging",
+
     "alerte": "Reprise des cours au dojo de Kérantré. Deux cours d'essai gratuits avec un simple pantalon de survêtement !",
     "affiche_stage": "",
+
+    "valeurs_tag": "Esprit du Budo",
+    "valeurs_titre": "Les Principes de la Pratique",
+    "valeurs_soustitre": "Une voie d'épanouissement physique et mental fondée sur le respect du partenaire.",
+    "valeurs_cards": [
+        {
+            "titre": "Zéro Compétition",
+            "description": "Pas de vainqueur ni de vaincu. L'accent est mis sur la coopération, la recherche du geste juste et l'apprentissage mutuel sans agressivité."
+        },
+        {
+            "titre": "Mains Nues & Armes",
+            "description": "Travail de défense (projections, clés articulaires) enrichi par l'étude des armes traditionnelles en bois : sabre (Bokken), bâton (Jo) et couteau (Tanto)."
+        },
+        {
+            "titre": "Accessible à Tous",
+            "description": "L'Aïkido n'utilise pas la force brute mais l'énergie et le placement. La pratique convient parfaitement aux femmes et aux hommes de tous âges."
+        }
+    ],
+
+    "enseignant_badge": "Direction Technique",
+    "enseignant_titre": "Assuré par Philippe Boivin",
+    "enseignant_grade": "6ᵉ Dan de l'Aïkikaï de Tokyo — Élève direct de Gérard Blaize (7ᵉ Dan Aïkikaï de Tokyo)",
+    "enseignant_bio": "Un enseignement rigoureux et authentique transmis dans le respect des principes fondamentaux fondés par Maître Morihei Ueshiba et diffusés par l'Association Internationale d'Aïkido Traditionnel du Japon (A.I.A.T.J.).",
+
+    "horaires_tag": "Planning",
+    "horaires_titre": "Horaires des Cours",
+    "horaires_soustitre": "Les séances se déroulent dans le Dojo du complexe sportif de Kérantré.",
     "horaires": [
         {
             "categorie": "Cours Adultes & Adolescents",
@@ -16,6 +46,10 @@
             "lieu": "Gymnase de Kérantré, Pontivy"
         }
     ],
+
+    "tarifs_tag": "Adhésion",
+    "tarifs_titre": "Cotisations & Tarifs",
+    "tarifs_soustitre": "Tarifs annuels tout compris pour la saison sportive.",
     "tarifs": [
         {
             "formule": "Cotisation & Licence Annuelle",
@@ -28,11 +62,10 @@
             "details": "Sur présentation d'un justificatif en début d'année."
         }
     ],
-    "contact": {
-        "dojo_nom": "Gymnase de Kérantré",
-        "adresse": "Rue Jef Le Penven, 56300 Pontivy",
-        "coordonnees_gps": "48.0593, -2.95464"
-    },
+
+    "bureau_tag": "Organisation",
+    "bureau_titre": "Le Bureau de l'Association",
+    "bureau_soustitre": "Membres bénévoles et responsables administratifs du club.",
     "bureau": [
         {
             "role": "Président",
@@ -53,6 +86,19 @@
             "email": "jacky.guillemoto@orange.fr"
         }
     ],
+
+    "contact_tag": "Localisation",
+    "contact_titre": "Dojo & Plan d'Accès",
+    "contact_description": "Venez assister à un cours ou essayer gratuitement. Présentez-vous 10 minutes avant le début de la séance au dojo.",
+    "contact": {
+        "dojo_nom": "Gymnase de Kérantré",
+        "adresse": "Rue Jef Le Penven, 56300 Pontivy",
+        "coordonnees_gps": "48.0593, -2.95464"
+    },
+    "form_titre": "Envoyer un message",
+    "form_description": "Une question sur la reprise, la tenue ou les créneaux ? Écrivez-nous directement.",
+
+    "partenaires_tag": "Liens & Partenaires Officiels",
     "partenaires": [
         {
             "nom": "A.I.A.T.J.",
@@ -70,5 +116,8 @@
             "nom": "Aïkido Saint-Joseph La Réunion",
             "url": "http://aikido-saint-joseph-97480.asso-web.com"
         }
-    ]
+    ],
+
+    "footer_line1": "Pontivy Aïkido — Association Loi 1901 — Dojo de Kérantré, 56300 Pontivy",
+    "footer_line2": "Affilié à l'Association Internationale d'Aïkido Traditionnel du Japon (A.I.A.T.J.)"
 }

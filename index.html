@@ -144,7 +144,7 @@
                 <div
                     class="inline-flex items-center gap-2 border border-red-800/70 bg-red-950/50 px-4 py-1.5 rounded-full text-xs uppercase tracking-widest text-red-400 font-semibold shadow-md">
                     <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-                    <span>Affilié A.I.A.T.J. — Aïkikaï de Tokyo</span>
+                    <span data-editable="hero_badge">Affilié A.I.A.T.J. — Aïkikaï de Tokyo</span>
                 </div>
 
                 <h1 class="font-serif-martial text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight"
@@ -152,18 +152,18 @@
                     L'harmonie en mouvement
                 </h1>
 
-                <p class="text-neutral-400 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                <p class="text-neutral-400 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed" data-editable="hero_description">
                     Découvrez un art martial japonais traditionnel d'esquive, de défense et de maîtrise de soi sans compétition. Accessible à tous, hommes et femmes, dès 14 ans.
                 </p>
 
                 <div
                     class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs font-semibold uppercase tracking-wider">
                     <a href="#horaires"
-                        class="w-full sm:w-auto bg-white text-neutral-950 px-7 py-3.5 rounded font-bold hover:bg-neutral-200 shadow-xl transition">
+                        class="w-full sm:w-auto bg-white text-neutral-950 px-7 py-3.5 rounded font-bold hover:bg-neutral-200 shadow-xl transition" data-editable="hero_btn1">
                         Consulter les créneaux
                     </a>
                     <a href="#contact"
-                        class="w-full sm:w-auto border border-neutral-700 bg-neutral-900/60 text-neutral-300 px-7 py-3.5 rounded hover:bg-neutral-800 transition">
+                        class="w-full sm:w-auto border border-neutral-700 bg-neutral-900/60 text-neutral-300 px-7 py-3.5 rounded hover:bg-neutral-800 transition" data-editable="hero_btn2">
                         Venir essayer en jogging
                     </a>
                 </div>
@@ -173,41 +173,13 @@
         <!-- Section Valeurs & Principes de l'Aïkido -->
         <section id="discipline" class="py-20 px-4 max-w-6xl mx-auto border-b border-neutral-800/80">
             <div class="text-center max-w-2xl mx-auto mb-14 space-y-2">
-                <span class="text-xs uppercase tracking-widest text-red-500 font-bold">Esprit du Budo</span>
-                <h2 class="font-serif-martial text-3xl font-bold text-white">Les Principes de la Pratique</h2>
-                <p class="text-neutral-400 text-xs sm:text-sm">Une voie d'épanouissement physique et mental fondée sur le respect du partenaire.</p>
+                <span class="text-xs uppercase tracking-widest text-red-500 font-bold" data-editable="valeurs_tag">Esprit du Budo</span>
+                <h2 class="font-serif-martial text-3xl font-bold text-white" data-editable="valeurs_titre">Les Principes de la Pratique</h2>
+                <p class="text-neutral-400 text-xs sm:text-sm" data-editable="valeurs_soustitre">Une voie d'épanouissement physique et mental fondée sur le respect du partenaire.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-7 rounded-xl bg-neutral-950/80 border border-neutral-800/90 hover:border-red-900/60 transition group">
-                    <div class="w-12 h-12 rounded-lg border border-red-900/50 bg-red-950/30 flex items-center justify-center text-red-500 font-serif-martial font-bold text-xl mb-4 group-hover:scale-110 transition">
-                        01
-                    </div>
-                    <h3 class="text-white font-semibold text-lg mb-2">Zéro Compétition</h3>
-                    <p class="text-neutral-400 text-xs sm:text-sm leading-relaxed">
-                        Pas de vainqueur ni de vaincu. L'accent est mis sur la coopération, la recherche du geste juste et l'apprentissage mutuel sans agressivité.
-                    </p>
-                </div>
-
-                <div class="p-7 rounded-xl bg-neutral-950/80 border border-neutral-800/90 hover:border-red-900/60 transition group">
-                    <div class="w-12 h-12 rounded-lg border border-red-900/50 bg-red-950/30 flex items-center justify-center text-red-500 font-serif-martial font-bold text-xl mb-4 group-hover:scale-110 transition">
-                        02
-                    </div>
-                    <h3 class="text-white font-semibold text-lg mb-2">Mains Nues & Armes</h3>
-                    <p class="text-neutral-400 text-xs sm:text-sm leading-relaxed">
-                        Travail de défense (projections, clés articulaires) enrichi par l'étude des armes traditionnelles en bois : sabre (Bokken), bâton (Jo) et couteau (Tanto).
-                    </p>
-                </div>
-
-                <div class="p-7 rounded-xl bg-neutral-950/80 border border-neutral-800/90 hover:border-red-900/60 transition group">
-                    <div class="w-12 h-12 rounded-lg border border-red-900/50 bg-red-950/30 flex items-center justify-center text-red-500 font-serif-martial font-bold text-xl mb-4 group-hover:scale-110 transition">
-                        03
-                    </div>
-                    <h3 class="text-white font-semibold text-lg mb-2">Accessible à Tous</h3>
-                    <p class="text-neutral-400 text-xs sm:text-sm leading-relaxed">
-                        L'Aïkido n'utilise pas la force brute mais l'énergie et le placement. La pratique convient parfaitement aux femmes et aux hommes de tous âges.
-                    </p>
-                </div>
+            <div id="valeurs-container" class="grid md:grid-cols-3 gap-8">
+                <!-- Rempli dynamiquement -->
             </div>
         </section>
 
@@ -218,14 +190,14 @@
                     道
                 </div>
                 <div class="space-y-3 text-center md:text-left flex-1">
-                    <span class="text-xs uppercase tracking-widest text-red-500 font-bold">Direction Technique</span>
+                    <span class="text-xs uppercase tracking-widest text-red-500 font-bold" data-editable="enseignant_badge">Direction Technique</span>
                     <h2 class="text-2xl sm:text-3xl font-serif-martial font-bold text-white" data-editable="enseignant_titre">
                         Assuré par Philippe Boivin
                     </h2>
                     <p class="text-neutral-300 font-medium text-sm sm:text-base text-red-400/90" data-editable="enseignant_grade">
-                        6ᵉ Dan de l'Aïkikaï de Tokyo — Élève de Gérard Blaize (7ᵉ Dan Aïkikaï de Tokyo)
+                        6ᵉ Dan de l'Aïkikaï de Tokyo — Élève direct de Gérard Blaize (7ᵉ Dan Aïkikaï de Tokyo)
                     </p>
-                    <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed pt-1">
+                    <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed pt-1" data-editable="enseignant_bio">
                         Un enseignement rigoureux et authentique transmis dans le respect des principes fondamentaux fondés par Maître Morihei Ueshiba et diffusés par l'Association Internationale d'Aïkido Traditionnel du Japon (A.I.A.T.J.).
                     </p>
                 </div>
@@ -235,9 +207,9 @@
         <!-- Horaires des Entraînements -->
         <section id="horaires" class="py-20 px-4 max-w-4xl mx-auto border-b border-neutral-800/80">
             <div class="text-center mb-12 space-y-2">
-                <span class="text-xs uppercase tracking-widest text-red-500 font-bold">Planning</span>
-                <h2 class="font-serif-martial text-3xl font-bold text-white">Horaires des Cours</h2>
-                <p class="text-neutral-400 text-xs sm:text-sm">Les séances se déroulent dans le Dojo du complexe sportif de Kérantré.</p>
+                <span class="text-xs uppercase tracking-widest text-red-500 font-bold" data-editable="horaires_tag">Planning</span>
+                <h2 class="font-serif-martial text-3xl font-bold text-white" data-editable="horaires_titre">Horaires des Cours</h2>
+                <p class="text-neutral-400 text-xs sm:text-sm" data-editable="horaires_soustitre">Les séances se déroulent dans le Dojo du complexe sportif de Kérantré.</p>
             </div>
             
             <div id="horaires-container" class="space-y-4">
@@ -245,13 +217,21 @@
             </div>
         </section>
 
-        <!-- Section Stage (Si affiche disponible) -->
-        <section id="stage-section" class="hidden py-20 px-4 max-w-4xl mx-auto border-b border-neutral-800/80 text-center">
+        <!-- Section Stage (Si affiche disponible ou en mode Admin) -->
+        <section id="stage-section" class="py-20 px-4 max-w-4xl mx-auto border-b border-neutral-800/80 text-center">
             <div class="text-center mb-8 space-y-2">
                 <span class="text-xs uppercase tracking-widest text-red-500 font-bold">Événement</span>
                 <h2 class="font-serif-martial text-3xl font-bold text-white">Prochain Stage d'Aïkido</h2>
             </div>
-            <div class="rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950 p-3 inline-block shadow-2xl">
+            
+            <!-- Admin input field for poster URL -->
+            <div id="admin-stage-url-box" class="hidden mb-4 max-w-md mx-auto p-3 bg-sky-950/60 border border-sky-600/60 rounded-lg text-xs text-left">
+                <label class="block text-sky-300 font-semibold mb-1">🖼️ URL de l'Affiche du Stage :</label>
+                <div data-editable="affiche_stage" class="bg-neutral-900 p-2 rounded text-sky-200 break-all border border-neutral-700"></div>
+                <p class="text-[10px] text-neutral-400 mt-1">Saisissez l'URL de l'image (ex: /images/uploads/stage.jpg ou https://...)</p>
+            </div>
+
+            <div id="stage-image-container" class="hidden rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950 p-3 inline-block shadow-2xl">
                 <img id="stage-image" src="" alt="Affiche du stage d'Aïkido" class="max-h-[550px] w-auto rounded-lg mx-auto object-contain">
             </div>
         </section>
@@ -259,9 +239,9 @@
         <!-- Tarifs -->
         <section id="tarifs" class="py-20 px-4 max-w-4xl mx-auto border-b border-neutral-800/80">
             <div class="text-center mb-12 space-y-2">
-                <span class="text-xs uppercase tracking-widest text-red-500 font-bold">Adhésion</span>
-                <h2 class="font-serif-martial text-3xl font-bold text-white">Cotisations & Tarifs</h2>
-                <p class="text-neutral-400 text-xs sm:text-sm">Tarifs annuels tout compris pour la saison sportive.</p>
+                <span class="text-xs uppercase tracking-widest text-red-500 font-bold" data-editable="tarifs_tag">Adhésion</span>
+                <h2 class="font-serif-martial text-3xl font-bold text-white" data-editable="tarifs_titre">Cotisations & Tarifs</h2>
+                <p class="text-neutral-400 text-xs sm:text-sm" data-editable="tarifs_soustitre">Tarifs annuels tout compris pour la saison sportive.</p>
             </div>
 
             <div id="tarifs-container" class="grid sm:grid-cols-2 gap-6">
@@ -272,9 +252,9 @@
         <!-- Composition du Bureau -->
         <section id="bureau" class="py-20 px-4 max-w-5xl mx-auto border-b border-neutral-800/80">
             <div class="text-center mb-12 space-y-2">
-                <span class="text-xs uppercase tracking-widest text-red-500 font-bold">Organisation</span>
-                <h2 class="font-serif-martial text-3xl font-bold text-white">Le Bureau de l'Association</h2>
-                <p class="text-neutral-400 text-xs sm:text-sm">Membres bénévoles et responsables administratifs du club.</p>
+                <span class="text-xs uppercase tracking-widest text-red-500 font-bold" data-editable="bureau_tag">Organisation</span>
+                <h2 class="font-serif-martial text-3xl font-bold text-white" data-editable="bureau_titre">Le Bureau de l'Association</h2>
+                <p class="text-neutral-400 text-xs sm:text-sm" data-editable="bureau_soustitre">Membres bénévoles et responsables administratifs du club.</p>
             </div>
 
             <div id="bureau-container" class="grid sm:grid-cols-3 gap-6">
@@ -287,9 +267,9 @@
             <div class="grid md:grid-cols-2 gap-10 items-start">
                 <div class="space-y-6">
                     <div>
-                        <span class="text-xs uppercase tracking-widest text-red-500 font-bold block mb-1">Localisation</span>
-                        <h2 class="font-serif-martial text-3xl font-bold text-white">Dojo & Plan d'Accès</h2>
-                        <p class="text-neutral-400 text-xs sm:text-sm mt-2 leading-relaxed">
+                        <span class="text-xs uppercase tracking-widest text-red-500 font-bold block mb-1" data-editable="contact_tag">Localisation</span>
+                        <h2 class="font-serif-martial text-3xl font-bold text-white" data-editable="contact_titre">Dojo & Plan d'Accès</h2>
+                        <p class="text-neutral-400 text-xs sm:text-sm mt-2 leading-relaxed" data-editable="contact_description">
                             Venez assister à un cours ou essayer gratuitement. Présentez-vous 10 minutes avant le début de la séance au dojo.
                         </p>
                     </div>
@@ -308,8 +288,8 @@
 
                 <!-- Formulaire de contact -->
                 <div class="bg-neutral-950 p-7 rounded-2xl border border-neutral-800 shadow-2xl">
-                    <h3 class="text-white font-serif-martial text-xl font-bold mb-2">Envoyer un message</h3>
-                    <p class="text-neutral-400 text-xs mb-6">Une question sur la reprise, la tenue ou les créneaux ? Écrivez-nous directement.</p>
+                    <h3 class="text-white font-serif-martial text-xl font-bold mb-2" data-editable="form_titre">Envoyer un message</h3>
+                    <p class="text-neutral-400 text-xs mb-6" data-editable="form_description">Une question sur la reprise, la tenue ou les créneaux ? Écrivez-nous directement.</p>
 
                     <form id="contact-form" name="contact-aikido" method="POST" data-netlify="true" class="space-y-4 text-xs">
                         <div>
@@ -339,7 +319,7 @@
 
         <!-- Partenaires & Liens -->
         <section class="py-12 px-4 max-w-5xl mx-auto text-center border-b border-neutral-800/80">
-            <h3 class="text-xs uppercase tracking-widest text-neutral-500 font-semibold mb-6">Liens & Partenaires Officiels</h3>
+            <h3 class="text-xs uppercase tracking-widest text-neutral-500 font-semibold mb-6" data-editable="partenaires_tag">Liens & Partenaires Officiels</h3>
             <div id="partenaires-container" class="flex flex-wrap justify-center gap-3 text-xs">
                 <!-- Rempli dynamiquement -->
             </div>
@@ -348,12 +328,12 @@
 
     <!-- Footer -->
     <footer class="py-10 px-4 text-center text-xs text-neutral-500 space-y-3">
-        <p>Pontivy Aïkido — Association Loi 1901 — Dojo de Kérantré, 56300 Pontivy</p>
-        <p class="text-[11px] text-neutral-600">Affilié à l'Association Internationale d'Aïkido Traditionnel du Japon (A.I.A.T.J.)</p>
+        <p data-editable="footer_line1">Pontivy Aïkido — Association Loi 1901 — Dojo de Kérantré, 56300 Pontivy</p>
+        <p class="text-[11px] text-neutral-600" data-editable="footer_line2">Affilié à l'Association Internationale d'Aïkido Traditionnel du Japon (A.I.A.T.J.)</p>
         <div class="pt-2">
             <button id="btn-toggle-auth" onclick="toggleAdminModal()"
                 class="text-neutral-500 hover:text-neutral-300 underline transition text-[11px] inline-flex items-center gap-1">
-                <span>⚙️ Espace Administration (Éditer les textes)</span>
+                <span>⚙️ Espace Administration (Édition In-Context)</span>
             </button>
         </div>
     </footer>
@@ -366,7 +346,7 @@
         <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-sky-400 animate-pulse"></span>
             <span class="text-sky-300 font-semibold">Mode Éditeur Actif</span>
-            <span class="text-neutral-400 text-[11px] hidden sm:inline">(Cliquez sur les textes pour les modifier)</span>
+            <span class="text-neutral-400 text-[11px] hidden sm:inline">(Cliquez sur N'IMPORTE QUEL texte pour le modifier)</span>
         </div>
         <div class="flex items-center gap-2 border-l border-neutral-800 pl-4">
             <button onclick="sauvegarderDirectement()" id="btn-save"
@@ -427,6 +407,12 @@
         const marker = L.marker([48.0593, -2.95464]).addTo(map);
         marker.bindPopup("<b>Gymnase de Kérantré</b><br>Pontivy Aïkido<br><span class='text-xs text-gray-600'>Dojo Municipal</span>").openPopup();
 
+        // Helper pour setter le contenu d'un élément data-editable en toute sécurité
+        function setEditContent(key, value) {
+            const el = document.querySelector(`[data-editable="${key}"]`);
+            if (el) el.textContent = value || '';
+        }
+
         // 2. Chargement des données JSON (Relatif)
         fetch('content/club.json')
             .then(res => res.json())
@@ -438,23 +424,14 @@
             .catch(err => console.error("Erreur de chargement des données club.json :", err));
 
         function rendreContenu(data) {
-            // Slogan
-            if (data.slogan) {
-                const sloganEl = document.querySelector('[data-editable="slogan"]');
-                if (sloganEl) sloganEl.textContent = data.slogan;
-            }
+            // Hero
+            setEditContent('slogan', data.slogan);
+            setEditContent('hero_badge', data.hero_badge);
+            setEditContent('hero_description', data.hero_description);
+            setEditContent('hero_btn1', data.hero_btn1);
+            setEditContent('hero_btn2', data.hero_btn2);
 
-            // Enseignant
-            if (data.enseignant_titre) {
-                const el = document.querySelector('[data-editable="enseignant_titre"]');
-                if (el) el.textContent = data.enseignant_titre;
-            }
-            if (data.enseignant_grade) {
-                const el = document.querySelector('[data-editable="enseignant_grade"]');
-                if (el) el.textContent = data.enseignant_grade;
-            }
-
-            // Alerte
+            // Alerte Banner
             const banner = document.getElementById('banner-alert');
             const alertText = document.querySelector('[data-editable="alerte"]');
             if (data.alerte && data.alerte.trim() !== '') {
@@ -465,19 +442,35 @@
                 banner.classList.add('hidden');
             }
 
-            // Prochain Stage
-            if (data.affiche_stage && data.affiche_stage.trim() !== '') {
-                document.getElementById('stage-image').src = data.affiche_stage;
-                document.getElementById('stage-section').classList.remove('hidden');
+            // Valeurs Section
+            setEditContent('valeurs_tag', data.valeurs_tag);
+            setEditContent('valeurs_titre', data.valeurs_titre);
+            setEditContent('valeurs_soustitre', data.valeurs_soustitre);
+            const vContainer = document.getElementById('valeurs-container');
+            vContainer.innerHTML = '';
+            if (data.valeurs_cards && Array.isArray(data.valeurs_cards)) {
+                data.valeurs_cards.forEach((c, index) => {
+                    vContainer.innerHTML += `
+                    <div class="p-7 rounded-xl bg-neutral-950/80 border border-neutral-800/90 hover:border-red-900/60 transition group">
+                        <div class="w-12 h-12 rounded-lg border border-red-900/50 bg-red-950/30 flex items-center justify-center text-red-500 font-serif-martial font-bold text-xl mb-4 group-hover:scale-110 transition">
+                            0${index + 1}
+                        </div>
+                        <h3 class="text-white font-semibold text-lg mb-2" data-editable="valeurs_card_titre_${index}">${c.titre}</h3>
+                        <p class="text-neutral-400 text-xs sm:text-sm leading-relaxed" data-editable="valeurs_card_desc_${index}">${c.description}</p>
+                    </div>`;
+                });
             }
 
-            // Contact Dojo
-            if (data.contact) {
-                if (data.contact.dojo_nom) document.querySelector('[data-editable="contact_dojo"]').textContent = data.contact.dojo_nom;
-                if (data.contact.adresse) document.querySelector('[data-editable="contact_adresse"]').textContent = data.contact.adresse;
-            }
+            // Enseignant Section
+            setEditContent('enseignant_badge', data.enseignant_badge);
+            setEditContent('enseignant_titre', data.enseignant_titre);
+            setEditContent('enseignant_grade', data.enseignant_grade);
+            setEditContent('enseignant_bio', data.enseignant_bio);
 
-            // Horaires
+            // Horaires Section
+            setEditContent('horaires_tag', data.horaires_tag);
+            setEditContent('horaires_titre', data.horaires_titre);
+            setEditContent('horaires_soustitre', data.horaires_soustitre);
             const hContainer = document.getElementById('horaires-container');
             hContainer.innerHTML = '';
             if (data.horaires && Array.isArray(data.horaires)) {
@@ -495,7 +488,23 @@
                 });
             }
 
-            // Tarifs
+            // Prochain Stage
+            setEditContent('affiche_stage', data.affiche_stage);
+            const stageSec = document.getElementById('stage-section');
+            const stageImgCont = document.getElementById('stage-image-container');
+            if (data.affiche_stage && data.affiche_stage.trim() !== '') {
+                document.getElementById('stage-image').src = data.affiche_stage;
+                stageImgCont.classList.remove('hidden');
+            } else {
+                if (!document.body.classList.contains('admin-mode')) {
+                    stageSec.classList.add('hidden');
+                }
+            }
+
+            // Tarifs Section
+            setEditContent('tarifs_tag', data.tarifs_tag);
+            setEditContent('tarifs_titre', data.tarifs_titre);
+            setEditContent('tarifs_soustitre', data.tarifs_soustitre);
             const tContainer = document.getElementById('tarifs-container');
             tContainer.innerHTML = '';
             if (data.tarifs && Array.isArray(data.tarifs)) {
@@ -511,7 +520,10 @@
                 });
             }
 
-            // Bureau
+            // Bureau Section
+            setEditContent('bureau_tag', data.bureau_tag);
+            setEditContent('bureau_titre', data.bureau_titre);
+            setEditContent('bureau_soustitre', data.bureau_soustitre);
             const bContainer = document.getElementById('bureau-container');
             bContainer.innerHTML = '';
             if (data.bureau && Array.isArray(data.bureau)) {
@@ -528,17 +540,33 @@
                 });
             }
 
-            // Partenaires
+            // Contact & Form Section
+            setEditContent('contact_tag', data.contact_tag);
+            setEditContent('contact_titre', data.contact_titre);
+            setEditContent('contact_description', data.contact_description);
+            if (data.contact) {
+                setEditContent('contact_dojo', data.contact.dojo_nom);
+                setEditContent('contact_adresse', data.contact.adresse);
+            }
+            setEditContent('form_titre', data.form_titre);
+            setEditContent('form_description', data.form_description);
+
+            // Partenaires Section
+            setEditContent('partenaires_tag', data.partenaires_tag);
             const pContainer = document.getElementById('partenaires-container');
             pContainer.innerHTML = '';
             if (data.partenaires && Array.isArray(data.partenaires)) {
-                data.partenaires.forEach(p => {
+                data.partenaires.forEach((p, index) => {
                     pContainer.innerHTML += `
                     <a href="${p.url}" target="_blank" rel="noopener" class="px-3.5 py-2 rounded-lg border border-neutral-800 bg-neutral-950 text-neutral-400 hover:text-white hover:border-neutral-700 transition">
-                        ${p.nom} ↗
+                        <span data-editable="partenaire_nom_${index}">${p.nom}</span> ↗
                     </a>`;
                 });
             }
+
+            // Footer Lines
+            setEditContent('footer_line1', data.footer_line1);
+            setEditContent('footer_line2', data.footer_line2);
         }
 
         // 3. Mode Administrateur In-Context
@@ -565,8 +593,9 @@
         function activerModeAdmin() {
             document.body.classList.add('admin-mode');
             document.getElementById('admin-bar').classList.remove('hidden');
-            const banner = document.getElementById('banner-alert');
-            banner.classList.remove('hidden');
+            document.getElementById('banner-alert').classList.remove('hidden');
+            document.getElementById('stage-section').classList.remove('hidden');
+            document.getElementById('admin-stage-url-box').classList.remove('hidden');
 
             document.querySelectorAll('[data-editable]').forEach(el => {
                 el.setAttribute('contenteditable', 'true');
@@ -578,6 +607,7 @@
             localStorage.removeItem('aikido_admin_token');
             document.body.classList.remove('admin-mode');
             document.getElementById('admin-bar').classList.add('hidden');
+            document.getElementById('admin-stage-url-box').classList.add('hidden');
             document.querySelectorAll('[data-editable]').forEach(el => {
                 el.removeAttribute('contenteditable');
                 el.removeAttribute('title');
@@ -595,46 +625,99 @@
             }
         });
 
-        // 4. Capture des modifications du DOM vers `clubData`
+        // 4. Capture de TOUTES les modifications du DOM vers `clubData`
         function capturerModifications() {
-            const getVal = (selector) => {
-                const el = document.querySelector(selector);
+            const getVal = (key) => {
+                const el = document.querySelector(`[data-editable="${key}"]`);
                 return el ? el.innerText.trim() : '';
             };
 
-            clubData.slogan = getVal('[data-editable="slogan"]');
-            clubData.enseignant_titre = getVal('[data-editable="enseignant_titre"]');
-            clubData.enseignant_grade = getVal('[data-editable="enseignant_grade"]');
-            clubData.alerte = getVal('[data-editable="alerte"]');
+            // Hero
+            clubData.slogan = getVal('slogan');
+            clubData.hero_badge = getVal('hero_badge');
+            clubData.hero_description = getVal('hero_description');
+            clubData.hero_btn1 = getVal('hero_btn1');
+            clubData.hero_btn2 = getVal('hero_btn2');
 
-            if (!clubData.contact) clubData.contact = {};
-            clubData.contact.dojo_nom = getVal('[data-editable="contact_dojo"]');
-            clubData.contact.adresse = getVal('[data-editable="contact_adresse"]');
+            // Alerte & Stage
+            clubData.alerte = getVal('alerte');
+            clubData.affiche_stage = getVal('affiche_stage');
 
+            // Valeurs
+            clubData.valeurs_tag = getVal('valeurs_tag');
+            clubData.valeurs_titre = getVal('valeurs_titre');
+            clubData.valeurs_soustitre = getVal('valeurs_soustitre');
+            if (clubData.valeurs_cards) {
+                clubData.valeurs_cards.forEach((c, i) => {
+                    c.titre = getVal(`valeurs_card_titre_${i}`);
+                    c.description = getVal(`valeurs_card_desc_${i}`);
+                });
+            }
+
+            // Enseignant
+            clubData.enseignant_badge = getVal('enseignant_badge');
+            clubData.enseignant_titre = getVal('enseignant_titre');
+            clubData.enseignant_grade = getVal('enseignant_grade');
+            clubData.enseignant_bio = getVal('enseignant_bio');
+
+            // Horaires
+            clubData.horaires_tag = getVal('horaires_tag');
+            clubData.horaires_titre = getVal('horaires_titre');
+            clubData.horaires_soustitre = getVal('horaires_soustitre');
             if (clubData.horaires) {
                 clubData.horaires.forEach((h, i) => {
-                    h.categorie = getVal(`[data-editable="horaire_cat_${i}"]`);
-                    h.lieu = getVal(`[data-editable="horaire_lieu_${i}"]`);
-                    h.jours_heures = getVal(`[data-editable="horaire_heures_${i}"]`);
+                    h.categorie = getVal(`horaire_cat_${i}`);
+                    h.lieu = getVal(`horaire_lieu_${i}`);
+                    h.jours_heures = getVal(`horaire_heures_${i}`);
                 });
             }
 
+            // Tarifs
+            clubData.tarifs_tag = getVal('tarifs_tag');
+            clubData.tarifs_titre = getVal('tarifs_titre');
+            clubData.tarifs_soustitre = getVal('tarifs_soustitre');
             if (clubData.tarifs) {
                 clubData.tarifs.forEach((t, i) => {
-                    t.formule = getVal(`[data-editable="tarif_formule_${i}"]`);
-                    t.details = getVal(`[data-editable="tarif_details_${i}"]`);
-                    t.prix = getVal(`[data-editable="tarif_prix_${i}"]`);
+                    t.formule = getVal(`tarif_formule_${i}`);
+                    t.details = getVal(`tarif_details_${i}`);
+                    t.prix = getVal(`tarif_prix_${i}`);
                 });
             }
 
+            // Bureau
+            clubData.bureau_tag = getVal('bureau_tag');
+            clubData.bureau_titre = getVal('bureau_titre');
+            clubData.bureau_soustitre = getVal('bureau_soustitre');
             if (clubData.bureau) {
                 clubData.bureau.forEach((m, i) => {
-                    m.role = getVal(`[data-editable="bureau_role_${i}"]`);
-                    m.nom = getVal(`[data-editable="bureau_nom_${i}"]`);
-                    m.telephone = getVal(`[data-editable="bureau_tel_${i}"]`);
-                    m.email = getVal(`[data-editable="bureau_mail_${i}"]`);
+                    m.role = getVal(`bureau_role_${i}`);
+                    m.nom = getVal(`bureau_nom_${i}`);
+                    m.telephone = getVal(`bureau_tel_${i}`);
+                    m.email = getVal(`bureau_mail_${i}`);
                 });
             }
+
+            // Contact & Form
+            clubData.contact_tag = getVal('contact_tag');
+            clubData.contact_titre = getVal('contact_titre');
+            clubData.contact_description = getVal('contact_description');
+            if (!clubData.contact) clubData.contact = {};
+            clubData.contact.dojo_nom = getVal('contact_dojo');
+            clubData.contact.adresse = getVal('contact_adresse');
+            clubData.form_titre = getVal('form_titre');
+            clubData.form_description = getVal('form_description');
+
+            // Partenaires
+            clubData.partenaires_tag = getVal('partenaires_tag');
+            if (clubData.partenaires) {
+                clubData.partenaires.forEach((p, i) => {
+                    p.nom = getVal(`partenaire_nom_${i}`);
+                });
+            }
+
+            // Footer
+            clubData.footer_line1 = getVal('footer_line1');
+            clubData.footer_line2 = getVal('footer_line2');
         }
 
         // Téléchargement JSON local pour mode hors-ligne
@@ -681,7 +764,7 @@
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        message: "Mise à jour du contenu du site via l'Éditeur Direct",
+                        message: "Mise à jour intégrale du contenu du site via l'Éditeur Direct",
                         content: encodedContent,
                         sha: currentSha
                     })
