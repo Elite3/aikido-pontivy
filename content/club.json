@@ -32,13 +32,13 @@
   "horaires_soustitre": "Les séances se déroulent dans le Dojo du complexe sportif de Kérantré.",
   "horaires": [
     {
-      "categorie": "Cours Adultes & Adolescents",
-      "jours_heures": "Lundi & Jeudi : 19h00 - 20h30",
+      "categorie": "Cours Adultes",
+      "jours_heures": "Lundi & Vendredi : 19h00 - 21h00",
       "lieu": "Gymnase de Kérantré, Pontivy"
     },
     {
-      "categorie": "Pratique des Armes traditionnelles (Bokken, Jo, Tanto)",
-      "jours_heures": "Samedi matin : 10h00 - 11h30",
+      "categorie": "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "jours_heures": "xxxx : xxxx-xxxx",
       "lieu": "Gymnase de Kérantré, Pontivy"
     }
   ],
