@@ -1,0 +1,6 @@
+# Robots.txt pour Pontivy Aïkido
+User-agent: *
+Allow: /
+
+# Sitemap officiel
+Sitemap: https://aikido-pontivy.netlify.app/sitemap.xml
