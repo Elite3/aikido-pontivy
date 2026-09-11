@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://aikido-pontivy.netlify.app/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;w=1200&amp;q=85</image:loc>
+      <image:title>Pontivy Aïkido Dojo de Kérantré</image:title>
+      <image:caption>Pratique de l'Aïkido traditionnel au dojo de Kérantré à Pontivy</image:caption>
+    </image:image>
+  </url>
+</urlset>
