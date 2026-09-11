@@ -42,7 +42,7 @@
       "lieu": "Gymnase de Kérantré, Pontivy"
     }
   ],
-  "galerie_tag": "VIE DU CLUB",
+  "galerie_tag": "Vie du Club",
   "galerie_titre": "Galerie Photo & Événements",
   "galerie_soustitre": "Retrouvez en images la pratique au Dojo de Kérantré, les entraînements et les stages d'Aïkido.",
   "galerie": [
@@ -52,7 +52,7 @@
     },
     {
       "url": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-      "legende": "Pratique des Armes traditionnelles en bois (Jo)"
+      "legende": "Pratique des Armes traditionnelles en bois (Bokken & Jo)"
     },
     {
       "url": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80",
@@ -78,29 +78,29 @@
       "details": "Sur présentation d'un justificatif en début d'année."
     }
   ],
-  "faq_tag": "FOIRE AUX QUESTIONS",
+  "faq_tag": "Foire Aux Questions",
   "faq_titre": "Questions Fréquentes",
   "faq_soustitre": "Tout ce que vous devez savoir avant de venir essayer l'Aïkido à Pontivy.",
   "faq": [
     {
       "question": "Comment se déroule un cours d'essai gratuit ?",
-      "reponse": ""
+      "reponse": "Deux cours d'essai gratuits sans engagement sont offerts à tous les nouveaux arrivants. Présentez-vous 10 minutes avant le début de la séance au dojo de Kérantré (les lundis ou vendredis dès 19h00) muni d'un simple pantalon de survêtement et d'un t-shirt propre. Des zooris ou claquettes sont recommandés pour circuler des vestiaires jusqu'aux tatamis."
     },
     {
       "question": "Quel est l'équipement nécessaire pour débuter ?",
-      "reponse": ""
+      "reponse": "Pour commencer, un pantalon de survêtement et un t-shirt suffisent amplement. Par la suite, la tenue traditionnelle se compose d'un keikogi blanc (kimono d'art martial en coton blanc) et d'une ceinture blanche. Les armes traditionnelles en bois (Bokken, Jo, Tanto) sont prêtées par le club pour les séances d'initiation."
     },
     {
       "question": "L'Aïkido convient-il aux femmes et aux débutants complets ?",
-      "reponse": ""
+      "reponse": "Absolument. L'Aïkido n'utilise jamais la force musculaire brute ou l'impact direct contre l'adversaire : il repose entièrement sur l'esquive, le déséquilibre, le guidage du mouvement et le placement du corps. Femmes et hommes de tous âges et de toutes corpulences pratiquent ensemble sur le même tatami dans un respect mutuel strict."
     },
     {
       "question": "À quel âge peut-on débuter au club de Pontivy ?",
-      "reponse": ""
+      "reponse": "Les cours adultes sont accessibles dès l'âge de 14 ans sans limite d'âge supérieure. Chacun progresse à son propre rythme physique sans aucune pression de résultat, ce qui permet de continuer à pratiquer l'Aïkido tout au long de sa vie."
     },
     {
       "question": "Y a-t-il de la compétition en Aïkido ?",
-      "reponse": ""
+      "reponse": "Non, aucune compétition ni combat n'existe en Aïkido traditionnel. L'art martial fondé par Maître Morihei Ueshiba vise la maîtrise de soi, la non-violence et la coopération avec le partenaire d'entraînement (Uke / Tori). La progression des grades (ceintures puis Dan) est validée par des passages d'examens techniques dans le cadre fédéral de l'A.I.A.T.J. — Aïkikaï de Tokyo."
     }
   ],
   "bureau_tag": "ORGANISATION",
